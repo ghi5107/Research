@@ -1,0 +1,130 @@
+CVE-2016-4802 cURL CVE-2016-4802 DLL Loading Local Code Execution Vulnerability
+reference: https://curl.haxx.se/docs/adv_20160530.html
+           https://cve.mitre.org/cgi-bin/cvename.cgi?name=2016-4802
+CVE-2017-9451  XSS Vulnerability in acp.php on FlatCore v1.4.6 
+reference: https://github.com/flatCore/flatCore-CMS/issues/34
+           https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9451
+CVE-2017-9452  Cross Site Scripting(XSS) in page parameter of admin.php 
+reference: https://github.com/Piwigo/Piwigo/issues/667
+           https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9451
+CVE-2017-9332 PivotX 2.3.11 smarty_self function XSS Vulnerability
+reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9452
+
+cve team response mail:
+----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+> [Suggested description]
+> Cross-site scripting (XSS) vulnerability in 
+> pivotx\templates\_sub_commentform_extended.html in PivotX 2.3.11 
+> allows remote attackers to inject arbitrary web script or HTML via the 
+> URI.
+> 
+> ------------------------------------------
+> 
+> [Additional Information]
+> the issue is confirmed and fixed by author, fixed version: 
+> http://pivotx.net/files/unstable-development/pivotx-2.3.x-latest.zip
+> review third commit at:  
+> https://sourceforge.net/p/pivot-weblog/code/4489/log/?path=/branches/2
+> .3.x
+> 
+> ------------------------------------------
+> 
+> [Vulnerability Type]
+> Cross Site Scripting (XSS)
+> 
+> ------------------------------------------
+> 
+> [Vendor of Product]
+> pivotx
+> 
+> ------------------------------------------
+> 
+> [Affected Product Code Base]
+> pivotx - 2.3.11
+> 
+> ------------------------------------------
+> 
+> [Affected Component]
+> pivotx\templates\_sub_commentform_extended.html, <form method="post" 
+> action="[[ self ]]#message" id="commentform">
+> 
+> ------------------------------------------
+> 
+> [Attack Type]
+> Remote
+> 
+> ------------------------------------------
+> 
+> [Impact Code execution]
+> true
+> 
+> ------------------------------------------
+> 
+> [Attack Vectors]
+> visit the link:
+> http://localhost/piv/?e=1&ha6do"><script>alert(document.cookie)</scrip
+> t>t34o8=1
+> 
+> ------------------------------------------
+> 
+> [Has vendor confirmed or acknowledged the vulnerability?] true
+> 
+> ------------------------------------------
+> 
+> [Discoverer]
+> GuoHui from Huawei WeiRan Labs
+
+Use CVE-2017-9332.
+
+
+- --
+CVE Assignment Team
+M/S M300, 202 Burlington Road, Bedford, MA 01730 USA [ A PGP key is available for encrypted communications at
+  http://cve.mitre.org/cve/request_id.html ] -----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBCAAGBQJZL3/6AAoJEHb/MwWLVhi2owgP/0Wm2woPDtNSYMGZhJnuBVn6
+4n1cfUXABQ+90+k/FebIFsZ+lvGK47EHr2LujxgD6V8VMD0eEknIf12DGwHEzos8
+FdBQ9SvVV1nWAiMxxQ457JI3ie0VPE7VKnojfP6FtTtfwU8LalTXNQNRS6OnJ3xy
+nFGdhqO4p703Xr+4otWgoDhDSI+++KIsnq/dJod1JmnAUDPpMdUhTUSQZY01bljW
+Nfz/T+P8XmCsp+Ptk8AGzgUEM5YjJ8vf0UgtdGkJ7QszpzKuS/37DMK+sbFUeM27
+GT8+hjDCu+gULIREM5b/6YvdAgxdwidrz71d4uEFgSJ865FtswH1e0i0KrFtAYkc
+CRXHh2n/5c8rzUyOs6G2yOxr8wksltcnw4JswI8m87npg6+dRQ1hjhc0pRMAKRn+
+NrQboLYnx+PMfVGYjYXJ7UV5MNUw1/3UPO2BIqvZ55JxKl4gyU0AUewZYU1H/I9k
+wSt9nhd2XuFr8MZdoSmbeAO1sb2pArrx/J6TbnUbjApKTbrwMvCOVWXIJKIHXbnU
+AM8fETmFzWpPBlhfpj+r0uOqv3tf4m4rbhr24JpRAl3w7bhNl+N0wNs1dpAzroLr
+eO/+qSqHM43VJL8PEW2OYt1WbLQ52QJRB7Q8WeSuLl2DlryjtiA4hED1sRsiBOI6
+UVVsMaadUQgUTS23TBaQ
+=2HDD
+-----END PGP SIGNATURE-----
+mail with author
+The issue is fixed. Try
+http://pivotx.net/files/unstable-development/pivotx-2.3.x-latest.zip
+or review third commit at
+https://sourceforge.net/p/pivot-weblog/code/4489/log/?path=/branches/2.3.x
+
+Regards,
+Hans
+
+PS! The XSS is of course also present in _sub_commentform.html
+
+2017-05-25 10:20 GMT+02:00 Guohui (C) <guohui09@huawei.com>:
+> Tested Version:    PivotX 2.3.11
+> Vulnerability Type:   XSS
+> Description:
+> Cross-site scripting (XSS) vulnerability in 
+> pivotx\templates\_sub_commentform_extended.html in PivotX 2.3.11 
+> allows remote attackers to inject arbitrary web script or HTML via the 
+> [[ self ]]
+> Code:
+>
+> Vulnerability Page: pivotx\templates\_sub_commentform_extended.html
+>
+>
+> Reproduce:
+>   http://
+> localhost/piv/?e=1&ha6do"><script>alert(document.cookie)</script>t34o8=1
+>   http://
+> localhost/piv/?e=1&weblogmessage=ilg4t"><script>alert(1)</script>jv577
