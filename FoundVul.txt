@@ -6,7 +6,7 @@ reference: https://github.com/flatCore/flatCore-CMS/issues/34
            https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9451
 CVE-2017-9452  Cross Site Scripting(XSS) in page parameter of admin.php 
 reference: https://github.com/Piwigo/Piwigo/issues/667
-           https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9451
+           https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9452
 CVE-2017-9332 PivotX 2.3.11 smarty_self function XSS Vulnerability
 reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9332
 
